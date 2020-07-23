@@ -1,0 +1,49 @@
+html {
+  font-size: 20px;
+  font-family: "Cantarell", sans-serif;
+}
+
+body {
+  font-size: 1rem;
+}
+
+header .header {
+  height: 6.25rem;
+  width: 100%;
+  background-color: brown;
+}
+
+header .header > .menu {
+  width: 90%;
+  height: 100%;
+  background-color: cadetblue;
+  margin: 0 auto;
+}
+
+/* sub_menu */
+header .header > .menu > .sub_menu {
+  background-color: cornflowerblue;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.65rem;
+  border-bottom: 1px solid #ececec;
+}
+
+header .header > .menu > .sub_menu > .left {
+  float: left;
+}
+
+header .header > .menu > .sub_menu > .left > div {
+  display: inline-block;
+}
+
+header .header > .menu > .sub_menu > .right {
+  float: right;
+  color: #999999;
+}
+header .header > .menu > .sub_menu > .right > ul li {
+  display: inline-block;
+  padding: 0 0.6rem;
+}
+
+/**/
