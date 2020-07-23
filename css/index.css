@@ -21,7 +21,7 @@ header .header > .menu {
 }
 
 /* sub_menu */
-header .header > .menu > .sub_menu {
+header .sub_menu {
   background-color: cornflowerblue;
   height: 2rem;
   line-height: 2rem;
@@ -29,21 +29,84 @@ header .header > .menu > .sub_menu {
   border-bottom: 1px solid #ececec;
 }
 
-header .header > .menu > .sub_menu > .left {
+header .sub_menu > .left {
   float: left;
 }
 
-header .header > .menu > .sub_menu > .left > div {
+header .sub_menu > .left > div {
   display: inline-block;
 }
 
-header .header > .menu > .sub_menu > .right {
+header .sub_menu > .right {
   float: right;
   color: #999999;
 }
-header .header > .menu > .sub_menu > .right > ul li {
+header .sub_menu > .right > ul {
+  height: 100%;
+  width: 100%;
+}
+
+header .sub_menu > .right > ul li {
   display: inline-block;
   padding: 0 0.6rem;
 }
+header .sub_menu > .right > ul li > a {
+  line-height: 100%;
+}
 
-/**/
+header .sub_menu > .right > ul li:last-child {
+  padding: 0;
+  width: 20px;
+}
+
+header .sub_menu > .right > ul > li:last-child a {
+  color: transparent;
+  display: inline-block;
+}
+
+header .sub_menu > .right > ul > li:last-child a:before {
+  content: "";
+  background: url(../images/top_r_menu_icon_03_b.png) no-repeat;
+  padding: 0 14px;
+}
+/* nav_menu */
+
+header .nav_menu {
+  height: 4.3rem;
+}
+header .menu > h1 {
+  float: left;
+}
+header .menu > h1 > a {
+  display: inline-block;
+}
+header .menu > h1 > img {
+}
+
+header .menu > h2 {
+  position: absolute;
+  left: -4000%;
+  top: 0;
+}
+
+header .nav_menu {
+  position: relative;
+}
+
+header .nav_menu > ul {
+  height: 4.2rem;
+  width: 33.25rem;
+  background-color: violet;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .nav_menu > ul li {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
