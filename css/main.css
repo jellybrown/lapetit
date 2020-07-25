@@ -1,0 +1,53 @@
+/* slide */
+
+.main {
+  overflow: hidden;
+}
+.main .slide > img {
+  height: 42.4rem;
+}
+
+/* ment */
+
+.main > .ment {
+  height: 27.25rem;
+  width: 100%;
+  background-color: darkgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main > .ment > p:nth-child(1) {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1;
+  margin: 0 0 0.9rem 0;
+}
+.main > .ment > p:nth-child(2) {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #111111;
+  line-height: 2.4rem;
+}
+.main > .ment > p:nth-child(3) {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: #888888;
+  line-height: 1.35rem;
+  padding: 1.85rem 0 0 0;
+}
+/* banner */
+
+.main > .banner {
+  width: 100%;
+  height: 22rem;
+}
+
+.main > .banner > ul li:nth-child(1) a {
+  display: block;
+  background: url(../images/main_section_banner_1.jpg) no-repeat;
+}
