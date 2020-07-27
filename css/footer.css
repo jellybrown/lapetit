@@ -1,12 +1,13 @@
 footer {
   width: 100%;
   height: 33.1rem;
+  font-size: 0.62rem;
 }
 
+/* information */
 footer .information {
   width: 100%;
   height: 13.5rem;
-  font-size: 0.65rem;
 
   margin-top: 12.5rem;
   vertical-align: top;
@@ -52,4 +53,42 @@ footer .information > .company > span {
 footer .information > .bank > span {
   display: inline-block;
   line-height: 1.1rem;
+}
+footer .information > .bank > span:first-of-type {
+  padding: 0 0 0.5rem 0;
+}
+
+/* cafe24_guide */
+footer .cafe24_guide {
+  height: 10rem;
+  width: 100%;
+  padding-top: 1.9rem;
+}
+
+footer .cafe24_guide > div:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 1rem;
+}
+footer .cafe24_guide > div:nth-of-type(2) {
+  display: flex;
+  justify-content: center;
+}
+
+footer .cafe24_guide > div > a {
+  display: inline-block;
+
+  padding: 0 0.75rem;
+  background-color: #eeeeee;
+  color: #9aa2a1;
+}
+
+footer .cafe24_guide > div:nth-of-type(1) > a {
+  line-height: 1.2rem;
+  margin: 0 0 0 0.4rem;
+}
+footer .cafe24_guide > div:nth-of-type(2) > a {
+  line-height: 1.5rem;
+  margin: 0 0.1rem;
 }
