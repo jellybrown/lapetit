@@ -3,7 +3,7 @@
   const subMenu = document.querySelector(".sub_menu");
   const navMenuTop = navMenu.offsetTop;
 
-  function scrollLoop() {
+  scrollLoop = () => {
     let yOffset = window.pageYOffset;
 
     if (yOffset >= navMenuTop) {
@@ -13,7 +13,7 @@
       navMenu.classList.remove("fixed");
       subMenu.classList.remove("hide");
     }
-  }
+  };
 
   window.addEventListener("scroll", scrollLoop);
 })();
