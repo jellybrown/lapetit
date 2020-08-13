@@ -1,53 +1,89 @@
 (() => {
 
-    const slide = document.querySelector(".slide");
-    const imgCount = 3;
+    const slide = $('.slide');
+    let imgSlide = slide.find('.imgSlide');
+    const slideCount = imgSlide.length;
+
+    let currentIndex = 0;
+    let startSlide = undefined;
+    const btn = slide.find('.button')
+    const prev = slide.find('.prev');
+    const next = slide.find('.next');
+    let num = slide.find('p');
 
 
-    setInterval(function () {
-
-        for (let i = 0; i <= slide.children.length; i++) {
-
-            setTimeout(function () {
-                slide.children[i].classList.remove("on");
-                slide.children[i + 1].classList.add("on");
-            }, 2000);
-
-            if (slide.children[i + 1].classList.contains("on")) {
-
-                slide.children[i + 1].style.display = "block";
-                slide.children[i + 1].style.opacity = "1";
-                slide.children[i + 1].style.transition = "3s";
+    imgSlide.eq(0).fadeIn(); //처음 창 열릴때
 
 
+    function goToSlide() {
+        const nextIndex = (currentIndex + 1) % slideCount;
+        imgSlide.eq(currentIndex).fadeOut();
+        imgSlide.eq(nextIndex).fadeIn();
+
+        currentIndex = nextIndex;
+        something = `${currentIndex + 1} / ${slideCount}`;
+        num.text(something);
+    }
 
 
+    // 슬라이드 이전,다음버튼 클릭시
+    btn.find('a').click(function (e) {
+        if ($(this).hasClass('prev')) {
 
+            if (currentIndex == 0) {
+                //currentIndex가 처음이라면, 마지막으로 간다.
+                e.preventDefault();
+                imgSlide.eq(currentIndex).fadeOut();
+                imgSlide.eq(slideCount - 1).fadeIn();
+                currentIndex = slideCount - 1;
+            } else {
+                e.preventDefault();
+                imgSlide.eq(currentIndex).fadeOut();
+                imgSlide.eq(currentIndex - 1).fadeIn();
+                currentIndex -= 1;
+            }
+
+        } else { //next를 누르면
+            if (currentIndex == slideCount - 1) {
+                //currentIndex가 마지막번호라면, 처음으로 돌아간다.
+                imgSlide.eq(currentIndex).fadeOut();
+                imgSlide.eq(0).fadeIn();
+                currentIndex = 0;
+            } else {
+                imgSlide.eq(currentIndex).fadeOut();
+                imgSlide.eq(currentIndex + 1).fadeIn();
+                currentIndex += 1;
             }
         }
-
-    }, 2000);
-
+    })
 
 
 
+    if (!startSlide) {
+        startSlide = setInterval(goToSlide, 2000);
+    }
 
 
-    // slide.children[i].className = `img{}`
+    function start() {
+        startSlide = setInterval(goToSlide, 2000);
+    }
 
-    //  for (let i = 0; i < slide.children.length; i++) {
-    //
-    //     if (slide.children[i].classList.contains("on")) {
-    //          slide.children[i].style.display = "block";
-    //          slide.children[i].style.opacity = "0";
-    //          slide.children[i].style.transition = "3s";
-    //      };
-    //   }
+    function stop() {
+        clearInterval(startSlide);
+        startSlide = undefined;
+    }
 
+    //마우스오버, 아웃할때
+    slide.mouseenter(function () {
+            stop();
+            prev.addClass("active");
+            next.addClass("active");
 
-
-
-
-
+        })
+        .mouseleave(function () {
+            start();
+            prev.removeClass("active");
+            next.removeClass("active");
+        });
 
 })();
