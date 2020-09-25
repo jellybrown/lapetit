@@ -13,6 +13,7 @@ body {
 header .header {
   height: 6.3rem;
   width: 100%;
+  position: relative;
 }
 
 header .header>.menu {
@@ -169,6 +170,7 @@ header .menu>h1 {
   bottom: 0;
 
   left: 5%;
+  transition: 1s;
 }
 
 header .menu>h1>a {
@@ -202,19 +204,25 @@ header .nav_menu>ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  transition: 0.5s;
 }
 
 header .nav_menu>ul li {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: bold;
   transition: all 0.5s;
+  font-weight: bold;
+
+}
+
+header .nav_menu>ul>li {
+  font-size: 0.8rem;
 }
 
 header .nav_menu>ul>li a {
   border-bottom: 2px solid rgb(105, 105, 105, 0);
+  line-height: 1;
+  transition: 0.5s ease-in-out;
 
-  transition: 0.3s ease-in-out;
 }
 
 header .nav_menu>ul>li.active a {
@@ -223,11 +231,24 @@ header .nav_menu>ul>li.active a {
 
 /* nav_menu fixed */
 
-header>h1.fixed img {
-  /* 로고 fixed */
-
+header h1.fixed {
   position: fixed;
+  top: 0;
+  left: 0;
+  transform: scale(0.35);
+  /* 로고 fixed */
+  z-index: 30;
+  height: 2.2rem;
+
 }
+
+header h1.fixed a {
+  display: block;
+  line-height: 2.2rem;
+}
+
+
+
 
 header .nav_menu.fixed {
   position: fixed;
@@ -246,12 +267,13 @@ header .nav_menu.fixed>ul {
   width: 40%;
 }
 
-header .nav_menu.fixed>ul li {
-  font-size: 0.75rem;
-}
+
 
 header .nav_menu.fixed>ul li a {
-  line-height: 1;
+  line-height: 100%;
+  font-size: 0.75rem;
+
+
 }
 
 /* sub_menu hide */

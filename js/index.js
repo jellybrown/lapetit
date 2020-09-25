@@ -14,7 +14,7 @@
   const brand = document.querySelector(".brand_story");
 
   const goBtn = document.querySelectorAll(".go_btn a")
-
+  const logo = document.querySelector("header h1")
 
   //스크롤시
 
@@ -26,9 +26,11 @@
     if (yOffset >= navMenuTop) {
       navMenu.classList.add("fixed");
       subMenu.classList.add("hide");
+      logo.classList.add("fixed");
     } else {
       navMenu.classList.remove("fixed");
       subMenu.classList.remove("hide");
+      logo.classList.remove("fixed");
     }
 
     //섹션별 opacity on
